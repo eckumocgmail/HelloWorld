@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+    
+		
+		<title> FrontEnd Developer Task </title>
+    
+		<!-- Что бы наглядно продемонстрировать решение задаачи -->
+		<style name="additional">
+			div{ 
+				background-color: black;   color: white;   border: 1px solid red; 
+				text-align: center;       				       
+			}
+			*{ font: 48px sans-serif;  }
+			body{ border: 1px solid red; width: 90%; left: 5%; position: relative; }
+			hr{ border: 1px dashed black; }
+		</style>
+    <script> 
+			window.onerror = function( event ){   alert( event );   } 
+			function $( id ){
+				return document.getElementById( id );
+			}						
+		</script>
+		
+		
+	
+
+		
+	</head><body align="center"><!-- ======================== HTMLBody =============================== -->
+		
+		
+		<p id="block_2_3_desc"> Блоки 2,3: 
+				минимальная высота 1500px 
+				свободное пространство между блоком и соседними элементами включая границы браузера 100px
+				максимальная ширина - 600px 
+				положение блока по центру
+				разместить эти блоки в две колонки (если ширина браузера позволяет)</p>
+		<div id="block_2" class="column">   block 2  </div>		
+		<div id="block_3" class="column">   block 3  </div>
+		<script>
+			function layoutBlock2And3(){
+				try{
+					$('block_2').innerHTML = $('block_2_3_desc').outerHTML + '<br/>' + $('block_2_3_style').innerHTML;
+					$('block_3').innerHTML = $('block_2_3_desc').outerHTML + '<br/>' + $('block_2_3_style').innerHTML;
+				} catch ( e ){
+					alert('layoutBlock2And3: ' + e );
+				}
+			}
+		</script>
+		<style name="optional" id="block_2_3_style" 
+					 onerror="alert( 'error in CSS ' + this.id )"
+					 onload="layoutBlock2And3()">
+			.column{ 
+				height: 1500px;  min-height: 1500px; 
+				width:  600px;	 max-width:	600px;
+				margin: 100px;	
+				position: relative;
+				display: inline-block;
+				align-items: center;
+			}			
+		</style>		
+    
+		
+		
+		
+		
+		
+		
+		
+		<p id="block_4_desc">Блок 4: 
+				высота 1500px 
+				без боковых отступов </p>		
+		<div id="block_4">   block 4  </div>		
+		<script>
+			function layoutBlock4(){
+				try{
+					$('block_4').innerHTML = $('block_4_desc').outerHTML + '<br/>' + $('block_4_style').innerHTML;
+				} catch ( e ){
+					alert( 'layoutBlock4: ' +  e );
+				}
+			}
+		</script>		
+		<style name="optional" id="block_4_style"
+					 onerror="alert( 'error in CSS ' + this.id )"
+					 onended="alert(this)"
+					 onload="layoutBlock4()">
+			#block_4{ 
+				margin-left: 0px; margin-right: 0px;
+				height: 1500px;		min-height: 1500px; 
+			}			
+		</style>		
+		
+</body></html>

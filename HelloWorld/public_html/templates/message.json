@@ -1,0 +1,17 @@
+{
+    "tag": "a",                                        
+    "content": "example",
+    "attr": {          
+        "href": "readme.txt",
+        "id": "someID"
+    },
+    "events": {    
+        "click":   "alert (this.href);",
+        "focus":   "this.className='active'",
+        "blur":    "app.log(this)"
+    },
+    "style": {     
+        "width":  "100px",
+        "height": "200px"
+    }
+}

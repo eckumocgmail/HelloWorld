@@ -1,0 +1,28 @@
+<!DOCTYPE html><html>
+<head onload="console.log(event)"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+   <title> FrontEnd Developer task </title>
+   <script onerror="error( 'error while loading script \n' + event );" 
+           onload="debug(this.src)"
+           src="{{url}}"
+           ng-repeat="url in resources"></script>
+				
+				
+		
+</head><body onerror="alert( 'error while loading body \n' + event.error );">
+	
+	
+	<header><h1> FrontEnd Developer task </h1></header>
+  <main><ul>
+    <li><a href="about.pdf"> task </a></li>
+    <li><a href="p1.html">  page №1  </a></li>
+    <li><a href="p2.html">  page №2  </a></li>
+    <li><a href="p3.html">  page №3  </a></li>
+  </ul></main> 
+  
+  <footer align="center">	
+			<a href="mailto:batov.konstantin@yandex.ru">   © copyright 2015   </a>
+	</footer>
+	
+</body></html>
+ 

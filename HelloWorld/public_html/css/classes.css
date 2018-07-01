@@ -1,0 +1,14 @@
+/* 
+    Created on : 25.12.2015, 14:03:14
+    Author     : <a href="mailto:batov.konstantin@yandex.ru">Konstantin Alexandrovich Batov</a>
+*/
+.to_right{ float: right; }
+ .to_left{ float: left; }
+		.line{ display: inline; 
+					 position: relative;
+					 width: 100%; 
+}
+.to_bottom{
+					 position: absolute;
+					 top: 95%;
+}

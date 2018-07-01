@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+    
+		<title>  FrontEnd Developer Task   </title>
+		<link rel="stylesheet" href="css/document.css">
+		<link rel="stylesheet" href="css/classes.css">
+		<script src="js/jquery/jquery.js" onerror="alert( 'error while loading script \n' + event );"></script>
+		<script src="js/aditional.js"></script>    
+		<script src="js/app.js"></script>    
+
+
+    
+</head><body onerror="app.catchMessage( 'document', event )">
+		
+	
+    
+			<header><h1> FrontEnd Developer task </h1></header>
+			<button onclick="app.Test.json()"> test JSON </button>
+			<button onclick="app.Test.html()"> test add object </button>
+			<button onclick="app.Test.events()"> test events binding </button>
+			
+			<main>
+				<div><span> 
+						<h2>Запрос JSON-объекта по заданному url-адресу</h2>
+						<details>
+								<summary>
+									
+										<form class="line" action="javascript:app.submitEvent( url.value )">
+											url: <input id="url" name="url" type="text" formnovalidate value="templates/message.json"/>
+													 <input type="submit" value="request"/>
+										</form>
+									
+								</summary>
+
+								<ul>
+									<li>При выполнении запроса форма посылает знание введенное в тестовое поле в функция 'app.getInstance().submitEvent( url.value )'</li>
+									<li>'app.getInstance().submitEvent( url.value )' с полученным значением URL-адреса и 'app.addObject( url, callbackFunc )'</li>
+									<li>Функция 'app.request( url )' выполняет обработку ошибок на стороне сервера (404, 403, 500 и т.п.), 
+											которые передаются в функцию 'app.error()'.</li>
+									<li>В случае успешного выполняет функция 'app.request( url )' проверяет значение 'contentType' ответного сообщения.</li>
+									<li>При получении валидного JSON объекта он должен он преобразовывается в cоответствующий ему HTML-элемент и 
+											передавается в качестве аргумента функции	'callbackFunc'. </li>
+									<li>Одновременное выполнение нескольких запросов по одному адресу запрещено, в случае такой ситуации новый запрос становиться в очередь и
+											выполняться после завершения предыдущего запроса (как в случае успешного выполнения так и	в случае прерывания с ошибкой).</li>
+									<li>Все вспомогательные функции являются частью объекта 'app'. </li>
+								</ul>
+						</details>
+				</span></div>
+				<p id="response"> &nbsp; </p>	
+			</main>
+			
+			
+			<footer class="line">	
+				<div id="console"></div>
+				<div align="center"><a href="mailto:batov.konstantin@yandex.ru">   © copyright 2015   </a></div>
+			</footer>			
+							
+							
+							
+</body></html>

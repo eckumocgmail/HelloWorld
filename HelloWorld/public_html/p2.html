@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<title> FrontEnd Developer Task </title>
+		<script src="js/prototype/prototype.js"
+            onerror="alert(event)"></script>		  
+            
+		<!-- Что бы наглядно продемонстрировать решение задаачи -->
+		<style name="additional">
+			.pane{ 
+				background-color: black;   color: white;   border: 1px solid red; 
+				text-align: center;       
+				font: 48px sans-serif;            
+        width: 90%; left: 5%;
+			}
+			body{ border: 1px solid  black;  }
+			  hr{ border: 1px dashed black; }
+      .on_black{ background-color: black; }
+      .on_white{ background-color: white; }
+		</style>
+    <script> window.onerror = function( event ){   alert( event );   } </script>   
+    
+
+    <style>
+      #block_1{
+        height: 100px; min-height: 100px; 
+      }
+    </style>
+    <script>
+       
+      var last = 0;
+			function load() {                                       this.onerror = window.onerror;
+					var block_1 = document.getElementById('block_1');		//«прилепляющийся» элемент					
+          var hseparator_1 = document.getElementById( 'hseparator_1' );
+          var hseparator_2 = document.getElementById( 'hseparator_2' );
+					var borderY = block_1.offset;                       // кол-во «прокрученных пикселей»					 
+          document.location='#viewport';
+				  window.onscroll = function( event ){                this.onerror = window.onerror;
+            if ( block_1.getBoundingClientRect().top <
+                 hseparator_1.getBoundingClientRect().bottom ){
+                 block_1.style.top = hseparator_1.getBoundingClientRect().bottom+'px';
+            } 
+						
+            if ( block_1.getBoundingClientRect().bottom >
+                 hseparator_2.getBoundingClientRect().bottom ){
+                 var position = hseparator_2.getBoundingClientRect().top -
+                                block_1.getBoundingClientRect().height;
+                 block_1.style.top = position +'px';
+            }
+            last = window.scrollY;	// кол-во прокрученных пикселей
+					}
+          window.onresize = window.onscroll;
+          
+			};			
+		</script>    
+    
+</head><body onload="load();">
+      
+      <div class="on_white" style="height: 2500px;"></div>
+      <div class="on_white" style="height: 500px;" id="viewport"></div>
+			<p id="task" class="pane" 
+				 style="color: black; text-align: left; font-size: 32px;
+				 
+								border: 0px solid black; background-color: white; ">Блок 1: 
+				минимальная высота 100px
+				изначально расположен статично в теле документа, 
+				при прокрутке окна браузера до первого пунктира - 
+					блок «приклеивается» к верхней границе браузера и остается видимым, 
+				при обратной прокрутке за линию 1 блок занимает свою исходную позицию; 
+				когда нижняя часть блока визуально равняется со второй пунктирной линей 
+					блок «приклеивается» нижним краем к данной визуальной границе и 
+					статично прокручивается вместе с основным документом, 
+				при прокрутке вверх происходит обратный эффект: 
+					«приклеивание» к второй линии, скрытие за первой линией.</p>
+      <hr id="hseparator_1"/>
+      <div style="padding-top: 300px; padding-bottom: 300px; ">
+       
+          <div id="block_1" 
+               class="pane" 
+               style="position: fixed; display: block; top: 40%;"> 
+						
+					</div>
+               
+      </div>
+      <hr id="hseparator_2"/>
+      
+      <div class="on_white"  style="height: 300px;"></div>
+      <div class="on_white" style="height: 9999px;"></div>
+      
+</body></html>
